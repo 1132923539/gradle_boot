@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boot_es" />
+        <module name="cloud_zuul" />
+        <module name="gradle_activiti" />
+        <module name="gradle_boot" />
+        <module name="gradle_boot_client_feign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="activity" target="1.8" />
+      <module name="gradle_boot_activiti" target="1.8" />
+      <module name="gradle_boot_client" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,45 @@
+server:
+  port: 7077
+## 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boot?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123
+#    druid:
+#      validationQuery: SELECT 1
+#      initialSize: 10
+#      minIdle: 10
+#      maxActive: 200
+#      minEvictableIdleTimeMillis: 180000
+#      testOnBorrow: false
+#      testWhileIdle: true
+#      removeAbandoned: true
+#      removeAbandonedTimeout: 1800
+#      logAbandoned: true
+#      poolPreparedStatements: true
+#      maxOpenPreparedStatements: 100
+
+#配置主机设置
+  application:
+    name: GradleBootActiviti
+
+  cloud:
+      consul:
+        host: localhost
+        port: 8500
+        discovery:
+          healthCheckInterval: 15s
+          instance-id: ${spring.application.name}
+          service-name: ${spring.application.name}
+  activiti:
+    check-process-definitions: false
+
+#配置健康检查信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

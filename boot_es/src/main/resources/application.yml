@@ -1,0 +1,24 @@
+server:
+  port: 7077
+## 数据源配置
+spring:
+#配置主机设置
+  application:
+    name: boot_es
+
+  cloud:
+      consul:
+        host: localhost
+        port: 8500
+        discovery:
+          healthCheckInterval: 15s
+          instance-id: ${spring.application.name}
+          service-name: ${spring.application.name}
+
+#配置健康检查信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

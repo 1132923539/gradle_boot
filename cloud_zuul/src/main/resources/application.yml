@@ -1,0 +1,34 @@
+server:
+  port: 8090
+spring:
+  application:
+    #配置主机名
+    name: cloud_zuul
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        instance-id: ${spring.application.name}
+        service-name: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#zuul:
+#  prefix: /getUser
+#  strip-prefix: false
+
+#zuul:
+#  routes:
+#    client1:
+#      path: /**
+#      stripPrefix: false
+
+logging:
+  level:
+    com.netflax: debug
